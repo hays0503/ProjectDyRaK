@@ -1,0 +1,215 @@
+.MainWidget {
+    height: 98%;
+    overflow: hidden;
+    overflow-anchor: none;
+}
+
+.TopWidget {
+    height: 12vh;
+}
+
+.CenterWidget {
+    height: 40vh;
+    // margin-top: 5vh;
+    margin-bottom: 8vh;
+}
+
+.BottomWidget {
+    height: 20vh;
+}
+
+.Down {
+    rotate: 200grad;
+}
+
+// .Top {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 0%;
+//     right: 0%;
+//     max-height: 10vh;
+// }
+
+// .Left {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 55vw;
+//     right: 40%;
+//     max-height: 10vh;
+//     rotate: 200grad;
+// }
+
+// .Right {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 55vw;
+//     left: 40%;
+//     max-height: 10vh;
+//     rotate: 200grad;
+// }
+
+.handsRight {
+    display: flex;
+    flex-wrap: wrap;
+    // rotate: 300grad;
+}
+
+.handsLeft {
+    display: flex;
+    flex-wrap: wrap;
+    // rotate: 100grad;
+}
+
+.handsTop {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.handsBottom {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gameCard {
+    color: red;
+    flex: 0 0 1%; /* explanation below */
+    // margin: 2px;
+    height: 1vh;
+}
+
+.imgNormal {
+    width: 8vw;
+    height: auto;
+}
+
+.imgActive {
+    width: 10vw;
+    height: auto;
+}
+
+.imgSmall {
+    width: 5vw;
+    height: auto;
+}
+
+.imgSmallHorizontal {
+    flex: 0 0 5%;
+    width: 5vw;
+    height: auto;
+    rotate: 100grad;
+}
+@media (orientation: Portrait) {
+    .imgCardBattleV1 {
+        width: 20vw;
+        height: auto;
+        flex-grow: 1;
+    }
+
+    .imgCardBattleV2 {
+        margin: auto;
+        width: 20vw;
+        flex-grow: 1;
+    }
+}
+
+@media (orientation: landscape) {
+    .imgCardBattleV1 {
+        width: 10vw;
+        height: auto;
+        flex-grow: 1;
+    }
+
+    .imgCardBattleV2 {
+        margin: auto;
+        width: 10vw;
+        flex-grow: 1;
+    }
+}
+
+.cardBattle {
+    display: flex;
+    margin-left: 2vw;
+    :nth-child(1) {
+        padding-left: 2vw;
+        rotate: 45grad;
+    }
+    :nth-child(2) {
+        padding-right: 2vw;
+        rotate: -45grad;
+    }
+}
+
+.gameArea {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.slide-in-blurred-top {
+    -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1)
+        reverse both;
+    animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) reverse
+        both;
+}
+
+@-webkit-keyframes slide-in-blurred-top {
+    0% {
+        -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+        transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+        transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-in-blurred-top {
+    0% {
+        -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+        transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+        transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@mixin buttonShow {
+    // width: 100%;
+    // height: 100%;
+    // align-self: center;
+    // text-align: center;
+}
+
+.buttonShowPrevCard {
+    @include buttonShow;
+    background-color: burlywood;
+}
+
+.buttonShowNextCard {
+    @include buttonShow;
+    background-color: burlywood;
+}
