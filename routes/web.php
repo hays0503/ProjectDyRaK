@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('login');
 // });
 
-Route::view('/','index');
+Route::view('/','/login');
 
 Route::name('user.')->group(function(){
     Route::view('/private','private')->middleware('auth')->name('private');
@@ -31,9 +31,12 @@ Route::name('user.')->group(function(){
         return view('login');
     })->name('login');
 
-    // Route::post('/login', []);
+    Route::post('/login', [\App\Http\Controllers\LoginController::class,'login']);
 
-    // Route::get('/logout', [])->name('logout');
+    Route::get('/logout', function(){
+        Auth::logout();
+        return redirect('/');
+    })->name('logout');
 
     Route::get('/registration', function (){
         
@@ -44,7 +47,7 @@ Route::name('user.')->group(function(){
         return view('registration');
     })->name('registration');
 
-    // Route::post('/registration',[]);
+    Route::post('/registration',[\App\Http\Controllers\RegisterController::class,'save']);
 
 });
 

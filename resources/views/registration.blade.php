@@ -32,7 +32,7 @@
                     <input class="form-control" id="email" name="email" type="text" value=""
                         placeholder="email" />
                     @error('email')
-                        <div class="alert alert-danger">{{ message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
@@ -41,7 +41,7 @@
                     <input class="form-control" id="password" name="password" type="text" value=""
                         placeholder="password" />
                     @error('password')
-                        <div class="alert alert-danger">{{ message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
